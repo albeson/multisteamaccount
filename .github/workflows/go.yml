@@ -24,7 +24,7 @@ jobs:
         go-version: 1.18
 
     - name: Build
-      run: go build -o mssa -ldflags -H=windowsgui -v ./...
+      run: go build -ldflags -H=windowsgui -v ./...
 
     - name: Test
       run: go test -ldflags -H=windowsgui -v ./...
@@ -51,7 +51,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./my-artifact.zip
+        asset_path: ./bin/my-artifact.zip
         asset_name: my-artifact.zip
         asset_content_type: application/zip  
   
