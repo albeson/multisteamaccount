@@ -27,7 +27,7 @@ jobs:
       run: go build -ldflags -H=windowsgui -v ./...
 
     - name: version
-      run: echo "{verson}={1.0.0}" >> $GITHUB_OUTPUT      
+      run: echo "{version}={1.0.0}" >> $GITHUB_OUTPUT      
       id: version
 
     - name: Test
@@ -47,8 +47,11 @@ jobs:
           - Second Change
         draft: false
         prerelease: false      
-      
-    - name: Upload Release Asset
+
+    - name: build artifacts
+      run: make build-windows
+
+    - name: upload windows artifact
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
       env:
