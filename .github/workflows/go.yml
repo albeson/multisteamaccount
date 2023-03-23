@@ -27,9 +27,8 @@ jobs:
       run: go build -ldflags -H=windowsgui -v ./...
 
     - name: version
-      run: echo "::set-output name=version::$(multisteamaccount --version)"
+      run: echo "::set-output name=version::1.0.0"
       id: version
-
 
     - name: Test
       run: go test -ldflags -H=windowsgui -v ./...
