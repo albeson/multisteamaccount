@@ -27,7 +27,7 @@ jobs:
       run: go build -ldflags -H=windowsgui -v ./...
 
     - name: version
-      run: echo "::set-output name=version::1.0.0"
+      run: echo "{verson}={1.0.0}" >> $GITHUB_OUTPUT      
       id: version
 
     - name: Test
