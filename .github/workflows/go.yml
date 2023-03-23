@@ -22,9 +22,9 @@ jobs:
       - name: Install dependencies
         run: |
           go get .
-          go get github.com/dixonwille/wmenu v4.0.2+incompatible
-          go get github.com/jxeng/shortcut v1.0.2
-          go get golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c
+          go get github.com/dixonwille/wmenu
+          go get github.com/jxeng/shortcut
+          go get golang.org/x/sys
 
       - name: Build
         run: go build -v ./...
